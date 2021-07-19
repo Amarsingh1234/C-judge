@@ -1,0 +1,27 @@
+<%- include ('./partials/header.ejs') %>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-12 col-lg-12">
+              <div class="card card-chart">
+                <div class="card-body">
+                  <%questions.forEach(function(question){%>
+                    <div class="row" style="margin-bottom: 3%;">
+                      <div class="col-8">
+                        <h4 class="card-title"><%= question.title%></h4>
+                      </div>
+                    <!-- <hr> -->
+                      <div class="col-2" style="justify-content: right;">
+                        <a class="btn btn-primary" href="/problems/<%=question._id%>" role="button">Solve</a>
+                      </div>
+                      <div class="col-2" style="justify-content: right;">
+                        <a class="btn btn-primary" href="/problems/<%=question._id%>/viewtestcase" role="button">View Testcase</a>
+                      </div>
+                    </div>
+                    <%})%>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <%- include ('./partials/footer.ejs') %>
